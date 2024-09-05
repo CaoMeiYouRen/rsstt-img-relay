@@ -26,6 +26,9 @@ const config = {
     // sspai workarounds
     sspaiCDN: [".sspai.com"],
     sspaiReferer: "https://sspai.com/",
+    // pixiv workarounds
+    pixivCDN: [".pximg.net"],
+    pixivReferer: "https://pixiv.net/",
     // 黑名单，URL 中含有任何一个关键字都会被阻断
     // blockList: [".m3u8", ".ts", ".acc", ".m4s", "photocall.tv", "googlevideo.com", "liveradio.ie"],
     blockList: [],
@@ -180,6 +183,10 @@ async function fetchHandler(request, env, ctx) {
                 } else if (config.sspaiCDN.some(x => urlObj.host.endsWith(x))) {
                     // apply sspai workarounds
                     fp.headers['referer'] = config.sspaiReferer;
+                    weservViaSelf = true;
+                } else if (config.pixivCDN.some(x => urlObj.host.endsWith(x))) {
+                    // apply pixiv workarounds
+                    fp.headers['referer'] = config.pixivReferer;
                     weservViaSelf = true;
                 }
             }
