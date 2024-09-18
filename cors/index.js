@@ -32,7 +32,7 @@ const config = {
     // 黑名单，URL 中含有任何一个关键字都会被阻断
     // blockList: [".m3u8", ".ts", ".acc", ".m4s", "photocall.tv", "googlevideo.com", "liveradio.ie"],
     blockList: [],
-    typeList: ["image", "video", "audio", "application", "font", "model"],
+    typeList: ["image", "video", "audio", "application", "font", "model", "text"],
     uploadToTelegraphPath: "upload_graph/",
     telegraphURL: "https://telegra.ph",
     weservURL: "https://wsrv.nl",
